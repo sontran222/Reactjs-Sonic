@@ -1,0 +1,41 @@
+@import "view/style/responsive";
+:root {
+  --backcolor: rgb(26, 25, 31);
+}
+html {
+  font-size: 16px;
+}
+body {
+  background-color: var(--backcolor);
+  margin: auto;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  align-items: center;
+  .App-header {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+@include Responsive($DESKTOP) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include Responsive($MEDIUM_DEVICE) {
+  html {
+    font-size: 14px;
+  }
+}
