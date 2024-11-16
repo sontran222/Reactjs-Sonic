@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./VerticalViewImg1.scss";
+import "./VerticalImg1.scss";
 
-class ComponentFilmView1 extends Component {
+class VerticalImg1 extends Component {
   render() {
     return (
       <div className="filmVertical1">
@@ -15,4 +15,4 @@ class ComponentFilmView1 extends Component {
   }
 }
 
-export default ComponentFilmView1;
+export default VerticalImg1;

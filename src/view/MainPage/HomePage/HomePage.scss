@@ -1,0 +1,34 @@
+@import "view/style/responsive";
+.homePageContainer {
+  width: 100%;
+
+  .sessionLeftAndRight {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    .sessionLeft {
+      width: 84.375rem;
+    }
+    .sessionRight {
+      width: 16.75rem;
+    }
+  }
+}
+
+// @include Responsive($DESKTOP) {
+//   .firstSessionLeft {
+//     background-color: gold;
+//   }
+// }
+
+// @include Responsive($SMALL_DEVICES) {
+//   .sessionLeftAndRight {
+//     background-color: aquamarine;
+//   }
+// }
+
+// @media (max-width: 1199px) {
+//   .homePageContainer {
+//     background-color: red;
+//   }
+// }

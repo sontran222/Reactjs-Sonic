@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./VerticalViewImg2.scss";
+import "./VerticalImg2.scss";
 
 class ComponentFilmView2 extends Component {
   render() {

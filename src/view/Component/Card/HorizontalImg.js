@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./HorizontalViewImg.scss";
-class ComponentFilmViewShort extends Component {
+import "./HorizontalImg.scss";
+class HorizontalImg extends Component {
   render() {
     return (
       <div className="filmHorizontal">
@@ -14,4 +14,4 @@ class ComponentFilmViewShort extends Component {
   }
 }
 
-export default ComponentFilmViewShort;
+export default HorizontalImg;

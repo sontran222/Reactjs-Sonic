@@ -1,10 +1,12 @@
-import HomePage from "./view/HomePage/HomePage";
+import HomePage from "./view/MainPage/HomePage/HomePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Nav from "./view/Nav/Nav";
+import Nav from "./view/Component/Nav/Nav";
 import Footer from "view/Footer/FooterParent/Footer";
-import AnotherPage from "view/Page/AnotherPage";
 
 import "./App.scss";
+
+import AnotherPage from "view/MainPage/AnotherPage/AnotherPage";
+import Introduce from "view/MainPage/IntroducePage/Introduce";
 
 function App() {
   const pageData = {
@@ -40,6 +42,8 @@ function App() {
               exact
               element={<AnotherPage data={pageData["/tv-shows"]} />}
             />
+
+            <Route path="/phim" exact element={<Introduce />} />
           </Routes>
         </header>
         <Footer></Footer>

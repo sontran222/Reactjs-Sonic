@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./VerticalViewImg0.scss";
-class VerticalViewImg0 extends Component {
+import "./VerticalImg0.scss";
+class VerticalImg0 extends Component {
   render() {
     return (
       <div className="filmVertical0">
@@ -11,7 +11,6 @@ class VerticalViewImg0 extends Component {
           <div className="title0">
             <p>{this.props.title}</p>
           </div>
-
           <span className="TotalEpisode0">{this.props.episode}</span>
           <span className="TotalEpisode0">{this.props.quality}</span>
         </div>
@@ -20,4 +19,4 @@ class VerticalViewImg0 extends Component {
   }
 }
 
-export default VerticalViewImg0;
+export default VerticalImg0;

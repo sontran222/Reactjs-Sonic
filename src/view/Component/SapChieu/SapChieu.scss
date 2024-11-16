@@ -1,0 +1,13 @@
+.firstSessionRight {
+  width: 268px;
+  height: 301px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .listFilmSapChieu {
+    width: 268px;
+    height: 240px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

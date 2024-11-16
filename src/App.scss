@@ -28,13 +28,13 @@ footer {
   width: 100%;
 }
 
-@include Responsive($DESKTOP) {
+@include Responsive($LARGE_DESKTOP) {
   html {
     font-size: 16px;
   }
 }
 
-@include Responsive($MEDIUM_DEVICE) {
+@include Responsive($DESKTOP) {
   html {
     font-size: 14px;
   }

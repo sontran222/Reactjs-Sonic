@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./AnotherPage.scss";
 
-import VerticalViewImg from "view/ComponentImgView/VerticalViewImg3";
+import VerticalImg3 from "view/Component/Card/VerticalImg3";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Fab, Pagination } from "@mui/material";
 import axios from "axios";
@@ -110,10 +110,7 @@ class AnotherPage extends Component {
                 const linkImg = "https://phimimg.com/" + item.poster_url;
                 const title = item.name;
                 return (
-                  <VerticalViewImg
-                    linkImg={linkImg}
-                    title={title}
-                  ></VerticalViewImg>
+                  <VerticalImg3 linkImg={linkImg} title={title}></VerticalImg3>
                 );
               })}
         </div>
