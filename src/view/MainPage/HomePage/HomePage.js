@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./HomePage.scss";
 
-import SapChieu from "view/Component/SapChieu/SapChieu";
-import TopPhim from "view/Component/TopPhim/TopPhim";
-import ListVerticalImg3 from "view/Component/ListCardForHomePage/ListVerticalImg3";
-import ListHorizontalImg from "view/Component/ListCardForHomePage/ListHorizontalImg";
-import ListVerticalImg2 from "view/Component/ListCardForHomePage/ListVerticalImg2";
+import ListVerticalImg3 from "view/Component/ListCardForHomePage/Left/ListVerticalImg3";
+import ListHorizontalImg from "view/Component/ListCardForHomePage/Left/ListHorizontalImg";
+import ListVerticalImg2 from "view/Component/ListCardForHomePage/Left/ListVerticalImg2";
+import SapChieu from "view/Component/ListCardForHomePage/Right/SapChieu/SapChieu";
+import TopPhim from "view/Component/ListCardForHomePage/Right/TopPhim/TopPhim";
 
 class HomePage extends Component {
   state = {

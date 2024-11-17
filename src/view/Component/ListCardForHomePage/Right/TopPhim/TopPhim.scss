@@ -1,0 +1,23 @@
+.secondSesionRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .TitleTopPhim {
+    padding: 10px 0;
+    font-size: 300;
+    color: white;
+    font-size: 1.25rem;
+  }
+  .listFilm {
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .listFilm::-webkit-scrollbar {
+    width: 8px;
+    cursor: pointer;
+  }
+  .listFilm::-webkit-scrollbar-thumb {
+    background-color: red;
+  }
+}

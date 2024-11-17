@@ -10,6 +10,8 @@ import Button from "@mui/material/Button";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import SelectValue from "view/Material_UI/SelectUI/SelectValue";
 import SkeletonImg from "view/Material_UI/SkeletonUI/SkeletonImg";
+import SapChieu from "view/Component/ListCardForHomePage/Right/SapChieu/SapChieu";
+import TopPhim from "view/Component/ListCardForHomePage/Right/TopPhim/TopPhim";
 
 function withUserLocation(WrappedComponent) {
   return (props) => {
@@ -29,7 +31,9 @@ class AnotherPage extends Component {
     isLoading: true,
   };
   handleChange = (event, value) => {
-    this.setState({ currentPage: value });
+    this.setState({
+      currentPage: value,
+    });
     this.props.navigate(
       `${this.props.location.pathname}?page=${value}&limit=20`
     );
@@ -93,34 +97,47 @@ class AnotherPage extends Component {
   }
   render() {
     return (
-      <>
-        <div>
-          <p>Danh sách phim ...</p>
-          <SelectValue></SelectValue>
-          <Button variant="contained" color="error">
-            Lọc phim
-          </Button>
+      <div className="ContainerAnotherPage">
+        <div className="LeftAnotherPage">
+          <div>
+            <p>Danh sách phim ...</p>
+            <SelectValue></SelectValue>
+            <Button variant="contained" color="error">
+              Lọc phim
+            </Button>
+          </div>
+          <div className="containerImg">
+            {this.state.isLoading
+              ? Array.from(new Array(20)).map((_, index) => (
+                  <SkeletonImg className="custom-skeleton" />
+                ))
+              : this.state.listFilms.map((item, index) => {
+                  const linkImg = "https://phimimg.com/" + item.poster_url;
+                  const title = item.name;
+                  return (
+                    <VerticalImg3
+                      linkImg={linkImg}
+                      title={title}
+                    ></VerticalImg3>
+                  );
+                })}
+          </div>
+          <div className="pageNumber">
+            <Pagination
+              count={20}
+              color="primary"
+              onChange={this.handleChange}
+            />
+          </div>
+          <Fab color="primary" aria-label="add">
+            <ArrowUpwardIcon />
+          </Fab>
         </div>
-        <div className="container">
-          {this.state.isLoading
-            ? Array.from(new Array(20)).map((_, index) => (
-                <SkeletonImg className="custom-skeleton" />
-              ))
-            : this.state.listFilms.map((item, index) => {
-                const linkImg = "https://phimimg.com/" + item.poster_url;
-                const title = item.name;
-                return (
-                  <VerticalImg3 linkImg={linkImg} title={title}></VerticalImg3>
-                );
-              })}
+        <div className="RightAnotherPage">
+          <SapChieu></SapChieu>
+          <TopPhim></TopPhim>
         </div>
-        <div className="pageNumber">
-          <Pagination count={20} color="primary" onChange={this.handleChange} />
-        </div>
-        <Fab color="primary" aria-label="add">
-          <ArrowUpwardIcon />
-        </Fab>
-      </>
+      </div>
     );
   }
 }
