@@ -9,7 +9,7 @@
     }
     .introduceText {
       position: absolute;
-      top: 30%;
+      top: 25%;
       left: 5%;
       color: #e0e0e0;
       width: 50%;
@@ -43,6 +43,12 @@
       .introduceDecription::-webkit-scrollbar-thumb {
         background-color: aqua;
         border-radius: 5px;
+      }
+      .mediaIntroduce {
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
       }
     }
   }

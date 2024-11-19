@@ -5,12 +5,15 @@ import "./Introduce.scss";
 import NotStartedIcon from "@mui/icons-material/NotStarted";
 import Button from "@mui/material/Button";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+
+import Rate from "view/Material_UI/Rating/Rate";
 function withRouter(Component) {
   return (props) => {
     const location = useLocation();
     return <Component {...props} location={location}></Component>;
   };
 }
+
 class Introduce extends Component {
   render() {
     return (
@@ -76,9 +79,19 @@ class Introduce extends Component {
                 He Peng, Yang Xing, Zhuojun Yao, Ma Yi, Wang Ziyun, Tan Xiaofan
               </span>
             </div>
-            <Button variant="contained" startIcon={<NotStartedIcon />}>
-              Xem phim
-            </Button>
+            <div className="mediaIntroduce">
+              <span>
+                <Button variant="contained" startIcon={<NotStartedIcon />}>
+                  Xem phim
+                </Button>
+              </span>
+              <div className="Rating">
+                <span>
+                  <Rate></Rate>
+                </span>
+                <span>(9.0 sao/5 đánh giá)</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="leftAndRightIntroduce">
