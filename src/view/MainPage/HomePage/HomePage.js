@@ -5,8 +5,8 @@ import "./HomePage.scss";
 import ListVerticalImg3 from "view/Component/ListCardForHomePage/Left/ListVerticalImg3";
 import ListHorizontalImg from "view/Component/ListCardForHomePage/Left/ListHorizontalImg";
 import ListVerticalImg2 from "view/Component/ListCardForHomePage/Left/ListVerticalImg2";
-import SapChieu from "view/Component/ListCardForHomePage/Right/SapChieu/SapChieu";
-import TopPhim from "view/Component/ListCardForHomePage/Right/TopPhim/TopPhim";
+import SapChieu from "view/Component/ListCardForHomePage/Right/ListVerticalImg1/SapChieu";
+import TopPhim from "view/Component/ListCardForHomePage/Right/ListVerticalImg0/TopPhim";
 
 class HomePage extends Component {
   state = {

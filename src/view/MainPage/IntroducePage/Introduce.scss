@@ -1,7 +1,62 @@
 .containerIntroduce {
-  .mainMovie {
-    width: 100%;
+  position: relative;
+  .introduceImg {
     height: 37rem;
-    object-fit: cover;
+    .mainMovie {
+      width: 100%;
+      height: 37rem;
+      object-fit: cover;
+    }
+    .introduceText {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      color: #e0e0e0;
+      width: 50%;
+      .titleIntroduce {
+        font-size: 1.875rem;
+        font-weight: 700;
+      }
+      .originNameIntroduce {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .introduceInfo {
+        font-size: 0.75rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .introduceVisibility {
+        display: flex;
+      }
+      .introduceDecription {
+        font-size: 1.175rem;
+        height: 13rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+      .introduceDecription::-webkit-scrollbar {
+        width: 8px;
+      }
+      .introduceDecription::-webkit-scrollbar-thumb {
+        background-color: aqua;
+        border-radius: 5px;
+      }
+    }
+  }
+  .introduceImg::before {
+    content: "";
+    position: absolute;
+    display: block;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .leftAndRightIntroduce {
+    display: flex;
+    flex-direction: row;
   }
 }

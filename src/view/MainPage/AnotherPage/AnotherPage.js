@@ -10,8 +10,8 @@ import Button from "@mui/material/Button";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import SelectValue from "view/Material_UI/SelectUI/SelectValue";
 import SkeletonImg from "view/Material_UI/SkeletonUI/SkeletonImg";
-import SapChieu from "view/Component/ListCardForHomePage/Right/SapChieu/SapChieu";
-import TopPhim from "view/Component/ListCardForHomePage/Right/TopPhim/TopPhim";
+import SapChieu from "view/Component/ListCardForHomePage/Right/ListVerticalImg1/SapChieu";
+import TopPhim from "view/Component/ListCardForHomePage/Right/ListVerticalImg0/TopPhim";
 
 function withUserLocation(WrappedComponent) {
   return (props) => {

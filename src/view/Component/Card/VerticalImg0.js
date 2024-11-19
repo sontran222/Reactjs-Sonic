@@ -1,9 +1,24 @@
 import React, { Component } from "react";
 import "./VerticalImg0.scss";
+import { useNavigate } from "react-router-dom";
+function withRouter(Component) {
+  return (props) => {
+    const navigate = useNavigate();
+    <Component {...props} navigate={navigate} />;
+  };
+}
 class VerticalImg0 extends Component {
+  goToPage = (data) => {
+    this.props.navigate("/phim", {
+      state: data,
+    });
+  };
   render() {
     return (
-      <div className="filmVertical0">
+      <div
+        className="filmVertical0"
+        onClick={() => this.goToPage(this.props.linkImg)}
+      >
         <div className="leftfilmVertical0">
           <img src={this.props.linkImg} alt="" className="ImageFilm0" />
         </div>
@@ -19,4 +34,4 @@ class VerticalImg0 extends Component {
   }
 }
 
-export default VerticalImg0;
+export default withRouter(VerticalImg0);

@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 import "./VerticalImg2.scss";
-
+import { useNavigate } from "react-router-dom";
+function withRouter(Component) {
+  return (props) => {
+    const navigate = useNavigate();
+    return <Component {...props} navigate={navigate}></Component>;
+  };
+}
 class ComponentFilmView2 extends Component {
+  goToPage = (data) => {
+    this.props.navigate("/phim", {
+      state: data,
+    });
+  };
   render() {
     return (
       <div className="filmVertical2">
@@ -15,4 +26,4 @@ class ComponentFilmView2 extends Component {
   }
 }
 
-export default ComponentFilmView2;
+export default withRouter(ComponentFilmView2);
