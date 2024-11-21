@@ -5,7 +5,6 @@ class ListVerticalImg2 extends Component {
   render() {
     return (
       <div className="NewFilm">
-        <div className="titleList2">Phim mới cập nhật</div>
         <div className="listNewFilm">
           <VerticalImg2></VerticalImg2>
           <VerticalImg2></VerticalImg2>

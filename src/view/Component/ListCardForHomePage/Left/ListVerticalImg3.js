@@ -5,14 +5,11 @@ class ListVerticalImg3 extends Component {
   render() {
     return (
       <div className="secondSessionLeft">
-        <div className="titleList3">Phim lẻ mới</div>
         <div className="listFilm">
           {this.props.films.map((item, index) => {
-            const linkImg = "https://phimimg.com/" + item.poster_url;
-            const title = item.name;
             return (
               <>
-                <VerticalImg3 linkImg={linkImg} title={title}></VerticalImg3>
+                <VerticalImg3 item={item}></VerticalImg3>
               </>
             );
           })}

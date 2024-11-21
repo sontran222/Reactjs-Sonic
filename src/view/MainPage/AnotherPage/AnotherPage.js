@@ -112,14 +112,7 @@ class AnotherPage extends Component {
                   <SkeletonImg className="custom-skeleton" />
                 ))
               : this.state.listFilms.map((item, index) => {
-                  const linkImg = "https://phimimg.com/" + item.poster_url;
-                  const title = item.name;
-                  return (
-                    <VerticalImg3
-                      linkImg={linkImg}
-                      title={title}
-                    ></VerticalImg3>
-                  );
+                  return <VerticalImg3 item={item}></VerticalImg3>;
                 })}
           </div>
           <div className="pageNumber">
@@ -135,7 +128,7 @@ class AnotherPage extends Component {
         </div>
         <div className="RightAnotherPage">
           <SapChieu></SapChieu>
-          <TopPhim></TopPhim>
+          <TopPhim films={this.state.listFilms}></TopPhim>
         </div>
       </div>
     );

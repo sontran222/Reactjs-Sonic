@@ -10,21 +10,23 @@ function withNavigate(Component) {
 }
 
 class ComponentFilmView3 extends Component {
-  gotoPage = (data) => {
-    this.props.navigate("/phim", {
-      state: data,
+  gotoPage = (slug) => {
+    this.props.navigate(`/phim/${slug}`, {
+      state: slug,
     });
   };
   render() {
+    const linkImg = "https://phimimg.com/" + this.props.item.poster_url;
+    const title = this.props.item.name;
     return (
       <div
         className="filmVertical3"
-        onClick={() => this.gotoPage(this.props.linkImg)}
+        onClick={() => this.gotoPage(this.props.item.slug)}
       >
         <span className="TotalEpisode3">Tập</span>
-        <img src={this.props.linkImg} alt="" className="ImageFilm3" />
+        <img src={linkImg} alt="" className="ImageFilm3" />
         <div className="title3">
-          <p>{this.props.title}</p>
+          <p>{title}</p>
         </div>
       </div>
     );

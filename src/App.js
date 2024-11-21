@@ -7,6 +7,7 @@ import "./App.scss";
 
 import AnotherPage from "view/MainPage/AnotherPage/AnotherPage";
 import Introduce from "view/MainPage/IntroducePage/Introduce";
+import WatchPage from "view/MainPage/WatchPage/WatchPage";
 
 function App() {
   const pageData = {
@@ -43,7 +44,8 @@ function App() {
               element={<AnotherPage data={pageData["/tv-shows"]} />}
             />
 
-            <Route path="/phim" exact element={<Introduce />} />
+            <Route path="/phim/:slug?" exact element={<Introduce />} />
+            <Route path="/phim/:slug/:episode" exact element={<WatchPage />} />
           </Routes>
         </header>
         <Footer></Footer>

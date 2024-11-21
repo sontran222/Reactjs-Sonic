@@ -8,17 +8,14 @@ class TopPhim extends Component {
       <div className="secondSesionRight">
         <div className="TitleTopPhim">Top phim bộ</div>
         <div className="listFilm">
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
-          <VerticalImg0></VerticalImg0>
+          {this.props.films.map((item, index) => {
+            return (
+              <>
+                <VerticalImg0 item={item}></VerticalImg0>
+                {console.log(item)}
+              </>
+            );
+          })}
         </div>
       </div>
     );

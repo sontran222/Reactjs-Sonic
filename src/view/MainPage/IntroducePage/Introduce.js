@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Introduce.scss";
 
 import NotStartedIcon from "@mui/icons-material/NotStarted";
@@ -7,14 +7,31 @@ import Button from "@mui/material/Button";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import Rate from "view/Material_UI/Rating/Rate";
+import ListVerticalImg2 from "view/Component/ListCardForHomePage/Left/ListVerticalImg2";
 function withRouter(Component) {
   return (props) => {
     const location = useLocation();
-    return <Component {...props} location={location}></Component>;
+    const navigate = useNavigate();
+    return (
+      <Component {...props} location={location} navigate={navigate}></Component>
+    );
   };
 }
 
 class Introduce extends Component {
+  state = {
+    selectedEpisode: null,
+  };
+  gotoPage = (episode) => {
+    this.props.navigate(`${episode}`);
+  };
+
+  chooseEpisode = (episode) => {
+    this.setState({
+      selectedEpisode: episode,
+    });
+    this.gotoPage(episode);
+  };
   render() {
     return (
       <div className="containerIntroduce">
@@ -24,6 +41,7 @@ class Introduce extends Component {
             src="https://phimimg.com/upload/vod/20241119-1/77a1361df6966129f9978990c45b90cf.jpg"
             alt=""
           />
+          <div className="blur"></div>
           <div className="introduceText">
             <div className="titleIntroduce">Ai Oán Trong Vườn Xuân</div>
             <div className="originNameIntroduce">Spring Garden (2024)</div>
@@ -94,9 +112,36 @@ class Introduce extends Component {
             </div>
           </div>
         </div>
-        <div className="leftAndRightIntroduce">
-          <div className="leftIntroduce"></div>
-          <div className="rightIntroduce"></div>
+        <div>
+          <div className="introduceEpisodeContainer">
+            <div className="introduceLableEpisode">Danh sách phim</div>
+            <ul className="introduceEpisode">
+              <li onClick={() => this.chooseEpisode(1)}>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+            </ul>
+          </div>
+          <div className="ContainerintroducePropose">
+            <div className="introduceLabelPropose">Đề xuất cho bạn</div>
+            <ListVerticalImg2></ListVerticalImg2>
+          </div>
         </div>
       </div>
     );

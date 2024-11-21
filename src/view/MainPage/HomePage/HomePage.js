@@ -25,17 +25,22 @@ class HomePage extends Component {
   render() {
     return (
       <div className="homePageContainer">
+        <div className="labelMovieHomePage">Phim mới cập nhật</div>
         <ListVerticalImg2></ListVerticalImg2>
         <div className="sessionLeftAndRight">
           <div className="sessionLeft">
+            <div className="labelMovieHomePage">Phim chiếu rạp mới</div>
             <ListHorizontalImg films={this.state.films}></ListHorizontalImg>
+            <div className="labelMovieHomePage">Phim lẻ mới</div>
             <ListVerticalImg3 films={this.state.films}></ListVerticalImg3>
+            <div className="labelMovieHomePage">Phim bộ mới</div>
             <ListVerticalImg3 films={this.state.films}></ListVerticalImg3>
+            <div className="labelMovieHomePage">Phim hoạt hình mới</div>
             <ListHorizontalImg films={this.state.films}></ListHorizontalImg>
           </div>
           <div className="sessionRight">
-            <SapChieu></SapChieu>
-            <TopPhim></TopPhim>
+            <SapChieu films={this.state.films}></SapChieu>
+            <TopPhim films={this.state.films}></TopPhim>
           </div>
         </div>
       </div>

@@ -1,0 +1,110 @@
+.watchPageContainer {
+  padding-top: 10px;
+  .leftAndRightWatchPage {
+    display: flex;
+    width: 103.125rem;
+    .leftWatchPage {
+      .video-container {
+        width: 75rem;
+        height: 42.1875rem;
+        // padding-bottom: 56.25%; /* 16:9 ratio */
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .rightWatchPage {
+      width: 30rem;
+      margin-left: 20px;
+      height: 42.1875rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .chooseEpisodeWatchPage {
+        color: white;
+      }
+      .borderWatchPageEpisode {
+        display: block;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        .watchPageEpisode {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          .SelectedEpisode {
+            color: aqua;
+          }
+          li {
+            background: #313036;
+            padding: 20px;
+            width: 20px;
+            height: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            cursor: pointer;
+            border-radius: 5px;
+          }
+        }
+      }
+
+      .borderWatchPageEpisode::-webkit-scrollbar {
+        width: 8px;
+      }
+      .borderWatchPageEpisode::-webkit-scrollbar-thumb {
+        background-color: aqua;
+        border-radius: 5px;
+      }
+    }
+  }
+  .watchPageBottom {
+    display: flex;
+    flex-direction: row;
+    .watchPageLeftBottom {
+      width: 75rem;
+      overflow: hidden;
+      .titleMovie {
+        padding: 10px 0;
+        span {
+          color: white;
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+      .changeServer {
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+      }
+      .watchPageDescription {
+        padding: 20px 0;
+        span {
+          color: white;
+        }
+      }
+      .watchPageNominate {
+        .titleNominateWatchPage {
+          color: white;
+          font-size: 2rem;
+        }
+      }
+      .commentWatchPage {
+        padding-top: 20px;
+        .commentTitleWatchPage {
+          color: white;
+          font-size: 2rem;
+        }
+      }
+    }
+    .watchPageRightBottom {
+      padding-left: 20px;
+      flex: 1;
+    }
+  }
+}

@@ -8,21 +8,24 @@ function withRouter(Component) {
   };
 }
 class HorizontalImg extends Component {
-  gotoPage = (data) => {
-    this.props.navigate("/phim", {
-      state: data,
+  gotoPage = (slug) => {
+    this.props.navigate(`/phim/${slug}`, {
+      state: slug,
     });
   };
+
   render() {
+    const linkImg = "https://phimimg.com/" + this.props.item.thumb_url;
+    const title = this.props.item.name;
     return (
       <div
         className="filmHorizontal"
-        onClick={() => this.gotoPage(this.props.linkImg)}
+        onClick={() => this.gotoPage(this.props.item.slug)}
       >
         <span className="TotalEpisode">Tập</span>
-        <img src={this.props.linkImg} alt="" className="ImageFilm" />
+        <img src={linkImg} alt="" className="ImageFilm" />
         <div className="title">
-          <p>{this.props.title}</p>
+          <p>{title}</p>
         </div>
       </div>
     );
