@@ -4,9 +4,9 @@ import "./HomePage.scss";
 
 import ListVerticalImg3 from "view/Component/ListCardForHomePage/Left/ListVerticalImg3";
 import ListHorizontalImg from "view/Component/ListCardForHomePage/Left/ListHorizontalImg";
-import ListVerticalImg2 from "view/Component/ListCardForHomePage/Left/ListVerticalImg2";
 import SapChieu from "view/Component/ListCardForHomePage/Right/ListVerticalImg1/SapChieu";
 import TopPhim from "view/Component/ListCardForHomePage/Right/ListVerticalImg0/TopPhim";
+import ListVerticalImg2 from "view/Component/ListCardForHomePage/Left/ListVerticalImg2";
 
 class HomePage extends Component {
   state = {
@@ -14,19 +14,23 @@ class HomePage extends Component {
   };
 
   async componentDidMount() {
-    let res = await axios.get(
-      "https://phimapi.com/v1/api/danh-sach/phim-le?limit=12"
-    );
-    this.setState({
-      films: res && res.data ? res.data.data.items : [],
-    });
+    try {
+      let res = await axios.get(
+        "https://phimapi.com/v1/api/danh-sach/phim-le?limit=12"
+      );
+      this.setState({
+        films: res && res.data ? res.data.data.items : [],
+      });
+    } catch (error) {
+      this.setState({ films: [] });
+    }
   }
 
   render() {
     return (
       <div className="homePageContainer">
         <div className="labelMovieHomePage">Phim mới cập nhật</div>
-        <ListVerticalImg2></ListVerticalImg2>
+        <ListVerticalImg2 films={this.state.films}></ListVerticalImg2>
         <div className="sessionLeftAndRight">
           <div className="sessionLeft">
             <div className="labelMovieHomePage">Phim chiếu rạp mới</div>

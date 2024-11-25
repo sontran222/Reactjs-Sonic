@@ -1,25 +1,33 @@
 import React, { Component } from "react";
-import "./VerticalImg2.scss";
 import { useNavigate } from "react-router-dom";
+import "./VerticalImg2.scss";
+
 function withRouter(Component) {
   return (props) => {
     const navigate = useNavigate();
     return <Component {...props} navigate={navigate}></Component>;
   };
 }
+
 class ComponentFilmView2 extends Component {
-  goToPage = (data) => {
-    this.props.navigate("/phim", {
-      state: data,
+  goToPage = (slug) => {
+    this.props.navigate(`/phim/${slug}`, {
+      state: slug,
     });
   };
   render() {
+    const linkImg = "https://phimimg.com/" + this.props.item.poster_url;
+    const title = this.props.item.name;
     return (
-      <div className="filmVertical2">
+      <div
+        className="filmVertical2"
+        onClick={() => this.goToPage(this.props.item.slug)}
+      >
+        {console.log(this.props.item)}
         <span className="TotalEpisode2">Tập</span>
-        <img src={this.props.linkImg} alt="" className="ImageFilm2" />
+        <img src={linkImg} alt="" className="ImageFilm2" />
         <div className="title2">
-          <p>{this.props.title}</p>
+          <p>{title}</p>
         </div>
       </div>
     );

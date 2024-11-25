@@ -5,7 +5,8 @@ import Avatar from "@mui/material/Avatar";
 
 import { NavLink } from "react-router-dom";
 import DropdownCategory from "view/Material_UI/DropdownUI/DropdownCategory";
-
+import SearchBox from "view/Material_UI/SearchBox/SearchBox";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 function stringToColor(string) {
   let hash = 0;
   let i;
@@ -45,8 +46,14 @@ class Nav extends Component {
           <DropdownCategory></DropdownCategory>
           <NavLink to="/quoc-gia">Quốc gia</NavLink>
         </div>
-        <div>
-          <Avatar {...stringAvatar("Tran Cao Son")} />
+        <div className="leftNav">
+          <div className="SearchNav">
+            <SearchBox></SearchBox>
+          </div>
+          <div className="AvatarNav">
+            <Avatar {...stringAvatar("Tran Cao Son")} />
+            <ArrowDropDownIcon></ArrowDropDownIcon>
+          </div>
         </div>
       </div>
     );

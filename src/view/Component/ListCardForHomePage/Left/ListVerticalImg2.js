@@ -6,16 +6,13 @@ class ListVerticalImg2 extends Component {
     return (
       <div className="NewFilm">
         <div className="listNewFilm">
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
-          <VerticalImg2></VerticalImg2>
+          {this.props.films.map((item, index) => {
+            return (
+              <>
+                <VerticalImg2 item={item}></VerticalImg2>
+              </>
+            );
+          })}
         </div>
       </div>
     );

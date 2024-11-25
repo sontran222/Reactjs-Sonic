@@ -91,7 +91,7 @@ class WatchPage extends Component {
             </div>
             <div className="watchPageNominate">
               <div className="titleNominateWatchPage">Đề xuất cho bạn</div>
-              <ListVerticalImg2></ListVerticalImg2>
+              <ListVerticalImg2 films={this.state.films}></ListVerticalImg2>
             </div>
             <div className="commentWatchPage">
               <div className="commentTitleWatchPage">Bình luận</div>

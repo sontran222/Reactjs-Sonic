@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import Rate from "view/Material_UI/Rating/Rate";
-import ListVerticalImg2 from "view/Component/ListCardForHomePage/Left/ListVerticalImg2";
+
 function withRouter(Component) {
   return (props) => {
     const location = useLocation();
@@ -140,7 +140,6 @@ class Introduce extends Component {
           </div>
           <div className="ContainerintroducePropose">
             <div className="introduceLabelPropose">Đề xuất cho bạn</div>
-            <ListVerticalImg2></ListVerticalImg2>
           </div>
         </div>
       </div>

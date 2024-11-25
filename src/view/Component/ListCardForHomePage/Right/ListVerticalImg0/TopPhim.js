@@ -12,7 +12,6 @@ class TopPhim extends Component {
             return (
               <>
                 <VerticalImg0 item={item}></VerticalImg0>
-                {console.log(item)}
               </>
             );
           })}
