@@ -1,35 +1,32 @@
 import React, { Component } from "react";
 import { Menu, MenuItem, Grid, Typography } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-class drop extends Component {
+class DropdownCountries extends Component {
   state = {
-    anchorEl: null,
+    countryChosen: null,
   };
-
   handleClick = (event) => {
-    this.setState({ anchorEl: event.currentTarget });
+    this.setState({ countryChosen: event.currentTarget });
   };
 
   handleClose = () => {
-    this.setState({ anchorEl: null });
+    this.setState({ countryChosen: null });
   };
-
   render() {
-    const { anchorEl } = this.state;
+    const { countryChosen } = this.state;
     const categories = [
       ["Chính kịch", "Học Đường", "Hài Hước", "Bí ẩn", "Tài Liệu"],
       ["Tình Cảm", "Hành Động", "Hoạt Hình", "Cổ Trang", "Kinh Dị"],
       ["Tâm Lý", "Phiêu Lưu", "Gia Đình", "Khoa Học", "Viễn Tưởng"],
     ];
-
     return (
       <div>
         <a onClick={this.handleClick} variant="contained">
-          Thể loại <ArrowDropDownIcon></ArrowDropDownIcon>
+          Quốc gia <ArrowDropDownIcon></ArrowDropDownIcon>
         </a>
         <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
+          countryChosen={countryChosen}
+          open={Boolean(countryChosen)}
           onClose={this.handleClose}
           MenuListProps={{ onMouseLeave: this.handleClose }}
           PaperProps={{
@@ -53,4 +50,4 @@ class drop extends Component {
   }
 }
 
-export default drop;
+export default DropdownCountries;

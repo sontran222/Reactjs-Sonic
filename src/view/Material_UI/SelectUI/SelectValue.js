@@ -1,27 +1,34 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Select, Space } from "antd";
 import React, { Component } from "react";
 import "./SelectValue.scss";
+const handleChange = (value) => {
+  console.log(`selected ${value}`);
+};
+const option = [
+  {
+    value: "None",
+    label: "Sắp xếp",
+    disabled: true,
+  },
+  {
+    value: "lucy",
+    label: "Lucy",
+  },
+  {
+    value: "Yiminghe",
+    label: "yiminghe",
+  },
+  {
+    value: "disabled",
+    label: "Disabled",
+  },
+];
 class SelectValue extends Component {
   render() {
     return (
-      <div className="selectInput">
-        <FormControl variant="filled">
-          <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
-          <Select
-            labelId="demo-simple-select-filled-label"
-            id="demo-simple-select-filled"
-            value={20}
-            onChange={this.handleChange}
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
-      </div>
+      <Space>
+        <Select defaultValue="None" onChange={handleChange} options={option} />
+      </Space>
     );
   }
 }

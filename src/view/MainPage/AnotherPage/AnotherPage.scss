@@ -6,8 +6,14 @@
 .ContainerAnotherPage {
   display: flex;
   .LeftAnotherPage {
+    margin-right: 30px;
+    .titleFilmChosen {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 10px;
+    }
     .containerImg {
-      width: 1380px;
+      width: 84rem;
       display: flex;
       flex-wrap: wrap;
       margin: auto;
@@ -24,6 +30,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px 0;
       .MuiPaginationItem-root {
         color: #555;
         background-color: #f0f0f0;
@@ -54,4 +61,22 @@
       }
     }
   }
+}
+
+.filterBtn {
+  background: linear-gradient(135deg, #6253e1, #04befe);
+  opacity: 1;
+  transition: all 0.3s;
+  border-radius: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.filterBtn:hover {
+  color: white;
+  font-weight: 600;
 }

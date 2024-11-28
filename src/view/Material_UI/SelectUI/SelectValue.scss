@@ -1,44 +1,17 @@
-.selectInput {
-  .MuiFormControl-root {
-    margin: 16px;
-    min-width: 120px;
-  }
+.ant-space.css-dev-only-do-not-override-1x0dypw.ant-space-horizontal.ant-space-align-center.ant-space-gap-row-small.ant-space-gap-col-small {
+  width: 100%;
+  height: 50px;
+  .ant-space-item {
+    width: 100%;
+    box-sizing: border-box;
 
-  .MuiFilledInput-root {
-    background-color: #2a292f;
-    border-radius: 8px;
-    padding: 8px;
-
-    &:hover {
-      background-color: #585656;
-    }
-
-    &:before,
-    &:after {
-      border-bottom: 2px solid #ffffff;
-    }
-
-    &:before {
-      border-bottom-style: dotted;
+    .ant-select.ant-select-outlined.css-dev-only-do-not-override-1x0dypw.ant-select-single.ant-select-show-arrow {
+      width: 100%;
+      margin: 10px 0;
     }
   }
+}
 
-  .MuiSelect-select {
-    color: #ffffff;
-    padding: 12px 16px;
-    font-size: 1rem;
-
-    &:focus {
-      background-color: transparent;
-    }
-  }
-
-  .MuiInputLabel-filled {
-    color: #ffffff;
-    font-weight: bold;
-
-    &.Mui-focused {
-      color: #ffffff;
-    }
-  }
+.ant-select-selection-item {
+  font-size: 1rem;
 }

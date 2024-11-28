@@ -3,15 +3,15 @@ import "./AnotherPage.scss";
 
 import VerticalImg3 from "view/Component/Card/VerticalImg3";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Fab, Pagination } from "@mui/material";
+import { Pagination } from "@mui/material";
 import axios from "axios";
 
-import Button from "@mui/material/Button";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import SelectValue from "view/Material_UI/SelectUI/SelectValue";
+
 import SkeletonImg from "view/Material_UI/SkeletonUI/SkeletonImg";
 import SapChieu from "view/Component/ListCardForHomePage/Right/ListVerticalImg1/SapChieu";
 import TopPhim from "view/Component/ListCardForHomePage/Right/ListVerticalImg0/TopPhim";
+import SelectValue from "view/Material_UI/SelectUI/SelectValue";
 
 function withUserLocation(WrappedComponent) {
   return (props) => {
@@ -100,11 +100,14 @@ class AnotherPage extends Component {
       <div className="ContainerAnotherPage">
         <div className="LeftAnotherPage">
           <div>
-            <p>Danh sách phim ...</p>
+            <p className="titleFilmChosen">Danh sách phim ...</p>
             <SelectValue></SelectValue>
-            <Button variant="contained" color="error">
-              Lọc phim
-            </Button>
+            <SelectValue></SelectValue>
+            <SelectValue></SelectValue>
+            <SelectValue></SelectValue>
+            <SelectValue></SelectValue>
+
+            <button className="filterBtn">Lọc phim</button>
           </div>
           <div className="containerImg">
             {this.state.isLoading
@@ -122,9 +125,6 @@ class AnotherPage extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <Fab color="primary" aria-label="add">
-            <ArrowUpwardIcon />
-          </Fab>
         </div>
         <div className="RightAnotherPage">
           <SapChieu></SapChieu>
