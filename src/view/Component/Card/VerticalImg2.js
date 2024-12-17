@@ -23,7 +23,6 @@ class ComponentFilmView2 extends Component {
         className="filmVertical2"
         onClick={() => this.goToPage(this.props.item.slug)}
       >
-        {console.log(this.props.item)}
         <span className="TotalEpisode2">Tập</span>
         <img src={linkImg} alt="" className="ImageFilm2" />
         <div className="title2">

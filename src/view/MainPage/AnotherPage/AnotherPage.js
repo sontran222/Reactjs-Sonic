@@ -100,7 +100,9 @@ class AnotherPage extends Component {
       <div className="ContainerAnotherPage">
         <div className="LeftAnotherPage">
           <div>
-            <p className="titleFilmChosen">Danh sách phim ...</p>
+            <p className="titleFilmChosen">
+              Danh sách phim {this.props.data.title}
+            </p>
             <SelectValue></SelectValue>
             <SelectValue></SelectValue>
             <SelectValue></SelectValue>

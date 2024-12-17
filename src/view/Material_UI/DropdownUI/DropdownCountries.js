@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Menu, MenuItem, Grid, Typography } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { NavLink } from "react-router-dom";
 class DropdownCountries extends Component {
   state = {
     countryChosen: null,
@@ -12,20 +13,70 @@ class DropdownCountries extends Component {
   handleClose = () => {
     this.setState({ countryChosen: null });
   };
+  handleMouseLeave = () => {
+    this.handleClose();
+  };
   render() {
     const { countryChosen } = this.state;
     const categories = [
-      ["Chính kịch", "Học Đường", "Hài Hước", "Bí ẩn", "Tài Liệu"],
-      ["Tình Cảm", "Hành Động", "Hoạt Hình", "Cổ Trang", "Kinh Dị"],
-      ["Tâm Lý", "Phiêu Lưu", "Gia Đình", "Khoa Học", "Viễn Tưởng"],
+      [
+        "Âu Mỹ",
+        "Thái Lan",
+        "Nga",
+        "Việt Nam",
+        "Tây Ban Nha",
+        "Indonesia",
+        "Malaysia",
+        "Brazil",
+        "Thụy Điển",
+        "Ireland",
+        "Ukraina",
+        "UAE",
+        "Colombia",
+        "Nigeria",
+        "Tất cả quốc gia",
+      ],
+      [
+        "Trung Quốc",
+        "Anh",
+        "Đài Loan",
+        "Ấn Độ",
+        "Úc",
+        "Canada",
+        "Philippines",
+        "Mexico",
+        "Na Uy",
+        "Ba Lan",
+        "Bỉ",
+        "Phần Lan",
+        "Ả Rập Xê Út",
+        "Chile",
+        "Argentina",
+      ],
+      [
+        "Thổ Nhĩ Kỳ",
+        "Hàn Quốc",
+        "Nhật Bản",
+        "Hồng Kông",
+        "Ý",
+        "Pháp",
+        "Đức",
+        "Nam Phi",
+        "Hà Lan",
+        "Đan Mạch",
+        "Thụy Sĩ",
+        "Bồ Đào Nha",
+        "Hy Lạp",
+        "Singapore",
+      ],
     ];
     return (
       <div>
-        <a onClick={this.handleClick} variant="contained">
+        <a onMouseEnter={this.handleClick} variant="contained" href="#">
           Quốc gia <ArrowDropDownIcon></ArrowDropDownIcon>
         </a>
         <Menu
-          countryChosen={countryChosen}
+          anchorEl={countryChosen}
           open={Boolean(countryChosen)}
           onClose={this.handleClose}
           MenuListProps={{ onMouseLeave: this.handleClose }}

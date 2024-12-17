@@ -44,6 +44,7 @@ class HomePage extends Component {
           </div>
           <div className="sessionRight">
             <SapChieu films={this.state.films}></SapChieu>
+
             <TopPhim films={this.state.films}></TopPhim>
           </div>
         </div>
